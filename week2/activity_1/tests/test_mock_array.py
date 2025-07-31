@@ -14,3 +14,6 @@ class TestMockArray(unittest.TestCase):
         self.mock_array.append(2)
         self.assertEqual(self.mock_array.get(0), 1)
         self.assertEqual(self.mock_array.get(1), 2)
+
+if __name__ == '__main__':
+    unittest.main()
