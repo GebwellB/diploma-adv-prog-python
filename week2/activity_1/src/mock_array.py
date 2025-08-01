@@ -22,12 +22,14 @@ class Array:
         if not (0 <= pos <= self._index):
             raise IndexError("Index out of bounds")
         return self._array[pos]
-
+    
+    # Decorators
     @classmethod
     def get_instance_count(cls):
+        """Decorated method available to all instances"""
         return cls.__instance_count
 
-    def __resize(self):  # private method
+    def __resize(self):  # private class method
         temp_array = [None] * (self._max_size * 2)
         temp_array[:self._max_size] = self._array
         self._array = temp_array
@@ -35,4 +37,5 @@ class Array:
 
     @property
     def index(self):
+        """Decorated method which behaves like a property"""
         return self._index
