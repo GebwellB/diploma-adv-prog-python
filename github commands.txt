@@ -1,0 +1,15 @@
+git switch 2025S2JohnR -- To switch to John's branch
+
+git pull -- (after switching to John's)
+
+ONCE PULLED:
+
+git switch main -- (back to my branch)
+
+git add . -- add all files to send up to GitHub
+
+git commit -m "MESSAGE" -- Add a commit message
+
+git push -- send the files to GitHub!
+
+** JUST REMEMBER TO SWITCH BETWEEN BRANCHES TO ENSURE I'M PULLING / PUSHING TO THE CORRECT BRANCHES"
