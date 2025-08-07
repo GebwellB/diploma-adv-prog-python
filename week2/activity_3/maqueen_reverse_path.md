@@ -125,37 +125,10 @@ while node:
     if cmd == "forward":
         robot.set_motor(0, 100)
         robot.set_motor(1, 100)
-    elif cmd == "right":
-        robot.set_motor(0, 100)
-        robot.set_motor(1, -100)
-    elif cmd == "left":
-        robot.set_motor(0, -100)
-        robot.set_motor(1, 100)
-    elif cmd == "stop":
-        robot.motor_stop_all()
     utime.sleep(1)
-    node = node.next
 
 utime.sleep(2)
 print("Reversing path...")
-
-# Execute reverse
-node = path.tail
-while node:
-    cmd = node.value
-    if cmd == "forward":
-        robot.set_motor(0, -100)
-        robot.set_motor(1, -100)
-    elif cmd == "right":
-        robot.set_motor(0, -100)
-        robot.set_motor(1, 100)
-    elif cmd == "left":
-        robot.set_motor(0, 100)
-        robot.set_motor(1, -100)
-    elif cmd == "stop":
-        robot.motor_stop_all()
-    utime.sleep(1)
-    node = node.prev
 
 robot.motor_stop_all()
 print("Back at starting point.")
