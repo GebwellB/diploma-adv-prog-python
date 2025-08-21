@@ -6,7 +6,7 @@
 from collections import deque
 
 def bfs_iterative_search(graph, start_node, goal_node):
-    """Return True iff goal_node is reachable from start_node using BFS."""
+    """Return True if goal_node is reachable from start_node using BFS."""
     if start_node == goal_node:
         return True
     visited_nodes = set([start_node])
@@ -22,7 +22,7 @@ def bfs_iterative_search(graph, start_node, goal_node):
     return False
 
 def dfs_iterative_search(graph, start_node, goal_node):
-    """Return True iff goal_node is reachable from start_node using DFS."""
+    """Return True if goal_node is reachable from start_node using DFS."""
     if start_node == goal_node:
         return True
     visited_nodes = set()
