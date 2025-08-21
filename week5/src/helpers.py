@@ -3,7 +3,7 @@ from time import perf_counter_ns
 
 
 # ---------- Data generation ----------
-def make_unique_random_list(n=10_000, low=1, high=12_000):
+def make_unique_random_list(n=10000, low=1, high=12000):
     """ returns unsorted order"""
     arr = random.sample(range(low, high + 1), k=n)
     random.shuffle(arr) 

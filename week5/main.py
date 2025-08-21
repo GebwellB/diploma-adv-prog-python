@@ -4,7 +4,7 @@ from src.binary_search import *
 from src.linear_search import *
 from src.breadth_first_search import *
 
-def run_experiment_1(seed=42, n=10000, trials=10000, low=1, high=12_000):
+def run_experiment_1(seed=42, n=10000, trials=10000, low=1, high=12000):
     """
     Timing experiment to compares different search strategies.
 
@@ -85,16 +85,25 @@ def run_experiment_2(n_nodes: int = 10_000, avg_neighbours: int = 6,trials: int 
     graph = make_random_graph(n=n_nodes, avg_degree=avg_neighbours, seed=seed)
 
     # random start/goal pairs
-  
+    nodes = list(range(n_nodes))
+    pairs = [(rng.choice(nodes), rng.choice(nodes)) for _ in range(trials)]
 
-    # create a starting time for each algotihm
+    # create a starting time for each algorithm
+    bfs_time_total = 0.0
+    dfs_time_total = 0.0
+
+    for start, goal in pairs:
+        bfs_time_total += time_call(lambda: bfs_iterative_search(graph, start, goal))
+        dfs_time_total += time_call(lambda: dfs_iterative_search(graph, start, goal))
+
+    # create a starting time for each algorithm
 
 
 if __name__ == "__main__":
-    run_experiment_1()
+    # run_experiment_1()
 
-    # graph_results = run_experiment_2()
+    graph_results = run_experiment_2()
 
-    # print("\nAverage time (ms) over 10000 Graph searches (BFS vs DFS)")
-    # for k, v in graph_results.items():
-    #    print(f"{k}: {v:.6f}")
+    print("\nAverage time (ms) over 10000 Graph searches (BFS vs DFS)")
+    for k, v in graph_results.items():
+       print(f"{k}: {v:.6f}")
