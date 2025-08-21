@@ -4,7 +4,7 @@ from src.binary_search import *
 from src.linear_search import *
 from src.breadth_first_search import *
 
-def run_experiment_1(seed=42, n=10_000, trials=10000, low=1, high=12_000):
+def run_experiment_1(seed=42, n=10000, trials=10000, low=1, high=12_000):
     """
     Timing experiment to compares different search strategies.
 
@@ -50,15 +50,19 @@ def run_experiment_1(seed=42, n=10_000, trials=10000, low=1, high=12_000):
     ) / trials
 
     # Binary search on UNSORTED
-
+    avg_time_binary_unsorted = sum(
+        time_call(lambda: binary_search_iter(x, data_sorted)) for x in needles
+    ) / trials
 
     # Binary search on SORTED
- 
+    avg_time_binary_sorted = sum(
+        time_call(lambda: binary_search_iter(x, data_sorted)) for x in needles
+    ) / trials
 
     print(f"Linear Search(unsorted) ms: {avg_time_linear_unsorted}")
     print(f"Linear Search(sorted)   ms: {avg_time_linear_sorted}")
-    # print(f"Binary Search(unsorted) ms: {avg_time_binary_unsorted}")
-    # print(f"Binary Search(sorted)   ms: {avg_time_binary_sorted}")
+    print(f"Binary Search(unsorted) ms: {avg_time_binary_unsorted}")
+    print(f"Binary Search(sorted)   ms: {avg_time_binary_sorted}")
 
 
 def run_experiment_2(n_nodes: int = 10_000, avg_neighbours: int = 6,trials: int = 10000, seed: int = 123):
@@ -89,8 +93,8 @@ def run_experiment_2(n_nodes: int = 10_000, avg_neighbours: int = 6,trials: int 
 if __name__ == "__main__":
     run_experiment_1()
 
-    graph_results = run_experiment_2()
+    # graph_results = run_experiment_2()
 
-    print("\nAverage time (ms) over 10000 Graph searches (BFS vs DFS)")
-    for k, v in graph_results.items():
-        print(f"{k}: {v:.6f}")
+    # print("\nAverage time (ms) over 10000 Graph searches (BFS vs DFS)")
+    # for k, v in graph_results.items():
+    #    print(f"{k}: {v:.6f}")
