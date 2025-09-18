@@ -190,11 +190,11 @@ views.py
 ```python
 
 from django.shortcuts import render
-from notifier.utils.factories import create_user
-from notifier.services.observer import UploadNotifier, alert_admin, log_upload
-from notifier.services.logging import action_logger
-from notifier.utils.log_reader import read_logs
-from notifier.utils.metadata import fetch_all_metadata
+from notifier_file.utils.factories import create_user
+from notifier_file.services.observer import UploadNotifier, alert_admin, log_upload
+from notifier_file.services.logging import action_logger
+from notifier_file.utils.log_reader import read_logs
+from notifier_file.utils.metadata import fetch_all_metadata
 import asyncio
 import logging
 
