@@ -58,7 +58,18 @@ class Galaxy:
             return self.galaxy_name != other
         return NotImplemented
 
+    @staticmethod
     def random_galaxies_name_generator(max_number = 100):
+        """
+        This function generates random galaxy names
+
+        Parameters:
+        max_number (int): maximum number of galaxies
+
+        Returns:
+        Galaxy names
+        :return:
+        """
         while True:
             letters = ''.join(random.choices(string.ascii_uppercase, k = 3))
             number = random.randint(5, max_number)

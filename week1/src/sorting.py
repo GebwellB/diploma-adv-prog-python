@@ -1,10 +1,9 @@
-def my_mutating_sort(items: list):
-    return items.sort()
+def my_mutatble_sort(items: list):
+    items.sort()
+    return items
 
 def my_immutable_sort(items: list):
-    new_sorted_list = list(items)
-    new_sorted_list.sort()
-    return new_sorted_list
+    return sorted(items)
 
 def galaxy_sorting_method(galaxies: list):
-    return my_mutating_sort(galaxies)
+    return sorted(galaxies)
