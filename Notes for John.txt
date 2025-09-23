@@ -19,8 +19,10 @@
 -- Ben and I got about 80% there with this activity. I really wanted to come back and finish this, but I just ran out of time. Our code just loops after you've told the BST what the correct answer is, it then asks it again without exiting. I think I can see where the problem is, if I get time before Thursday, I'll try it out.
 
 -- Week 7:
-- Done activity 1 so far
+- Done all 3 parts of the activity. It took SO LONG
 
 -- Week 8:
+- I didn't have enough time to sit down and properly go through this activity. I did however do it in class, and I understand how each function is called and when the logging wrapper activates
 
 -- Week 9:
+-Django I picked up pretty quickly - I feel I'm okay with this

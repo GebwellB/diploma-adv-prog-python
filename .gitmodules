@@ -2,3 +2,7 @@
 	path = week7/AutomatedTesting
 	url = https://github.com/GebwellB/AutomatedTesting
 	branch = main
+[submodule "week7/activity2/Tasks-Repo"]
+	path = week7/activity2/Tasks-Repo
+	url = https://github.com/GebwellB/AdvancedPython-Week7
+	branch = main
