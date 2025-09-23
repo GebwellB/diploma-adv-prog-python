@@ -1,0 +1,26 @@
+-- Week 1 - sorting? Calling functions?:
+- No notes really, just wanting to confirm the activity was to get used to calling functions from other files.
+
+-- Week 2 - Linked Lists:
+- After doing the assessment that involved doubly linked lists, I understand how they operate, but I'm confused as to what is happening in activity 1.
+- This was the stacking problem work
+
+-- Week 3:
+- While using argon2 for the salting and hashing in the assesment, I understand that bit. But following it along manually with Pearson's, it's a little much to get my head around.
+- Ask John to explain it again, if possible
+
+-- Week 4:
+- Same activity as week 1... Worked on this with Zac. I've updated my copy to be the same as week 1's work
+
+-- Week 5:
+- I spent a long time trying to get this working. Line 70 in week5\src\main.py, data_sorted is expected to be an int, not a list. From researching, I'd need to build the Binary Search Tree prior to passing this in, as it's expecting the root node to start. At least, that's what I'm finding from googling and asking old mate ChatGPT. Which, I found the answer file on Blackboard, and it's exactly what I thought... Needing to build the BST then searching by it's root node. Lol.
+
+-- Week 6:
+-- Ben and I got about 80% there with this activity. I really wanted to come back and finish this, but I just ran out of time. Our code just loops after you've told the BST what the correct answer is, it then asks it again without exiting. I think I can see where the problem is, if I get time before Thursday, I'll try it out.
+
+-- Week 7:
+- Done activity 1 so far
+
+-- Week 8:
+
+-- Week 9:

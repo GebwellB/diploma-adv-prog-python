@@ -1,0 +1,7 @@
+In main.py...
+
+1. prompt the user to enter a sentence.
+2. import & use the Stack class to do the following.
+3. create a second class which uses the stack to reverse the order of words in the sentence.
+4. prints the reversed sentence.
+5. continue to prompt the user until they enter "stop"

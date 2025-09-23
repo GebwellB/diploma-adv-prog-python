@@ -1,0 +1,48 @@
+stack exists
+cool
+
+
+
+
+add sentence
+
+    sentence split into words
+    get index of amount of words
+
+
+    if words are more than like 10? <-- Idiot forgot she can just change the max size variable (it was late ok)
+        do below code in batches <--- The entire below if statement is obsolete but its there for posterity's sake
+            do some fuckin. calc to calculate how words work
+
+                can we even do that with this method
+                    yes
+                    so like
+                    {
+                    quick brown fox jumps over lazy dog and a skipping rope yup
+                        so thats 12
+                    so we push
+                        fox jumps over lazy dog and a skipping rope
+                    we get
+                        rope skipping a and dog lazy over jumps fox
+                    and then we push 
+                        quick brown
+                    and we get
+                        brown quick
+                    and overall user will see
+                        rope skipping a and dog lazy over jumps fox brown quick
+                    }
+        
+
+    if there's sentence
+        push onto stack from start of list (10 words)
+        add topmost to some total sentence variable
+        kill topmost
+        die happy
+
+
+the question being posed today is if using lists is cheating
+theres probably some way of doing it without them
+and probably without external data structures in general. 
+but this is python so simplest is best etcetc
+
+split exists for a reason and it is my python given right to use it

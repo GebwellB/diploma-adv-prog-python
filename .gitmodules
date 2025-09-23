@@ -1,3 +1,4 @@
 [submodule "week7/AutomatedTesting"]
 	path = week7/AutomatedTesting
 	url = https://github.com/GebwellB/AutomatedTesting
+	branch = main
