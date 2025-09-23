@@ -1,0 +1,16 @@
+at the start, sets left / right node as null and key as null. Sets data changed and round played as false
+
+left negative
+right positive
+
+load data
+check if empty
+	if empty, make new root node
+
+
+if node_key is none
+	N: call "Get animal"
+		__get_differentiating_answer
+			print('What y/n question would you ask to tell the difference between a {0} and a {1}?'.format())
+
+	Y: Win
