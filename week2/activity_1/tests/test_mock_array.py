@@ -1,5 +1,6 @@
 import unittest
-from src.mock_array import Array
+# I'm working from the root of "Week 2" folder, needs full file path to work properly
+from activity_1.src.mock_array import Array
 from unittest.mock import patch
 
 class TestMockArray(unittest.TestCase):

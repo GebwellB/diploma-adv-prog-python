@@ -1,5 +1,6 @@
 def my_mutating_sort(items: list):
-    return items.sort()
+    items.sort()
+    return items
 
 def my_immutable_sort(items: list):
     new_sorted_list = list(items)

@@ -1,20 +1,33 @@
 import unittest
-from src.galaxy import Galaxy
-from src import sorting
+# Working from the root directory of week 4, need to change to complete path
+from activity.src.galaxy import Galaxy
+import activity.src.sorting as sorting
 
 
 class TestSorting(unittest.TestCase):
-    galaxies = []
 
     def setUp(self):
-        for _ in range(20):
-            self.galaxies.append(Galaxy(Galaxy.random_galaxies_name_generator()))
+        self.galaxies = []
+        galaxy_generator = Galaxy.random_galaxies_name_generator()
+        for _ in range(5):
+            self.galaxies.append(Galaxy(next(galaxy_generator)))
 
     def tearDown(self):
         del self.galaxies
 
-    def test_sorting(self):
-        self.galaxies = sorting.my_mutating_sort(self.galaxies) #unfinished
+    def test_sorting_mutable(self):
+        original = self.galaxies.copy()
+        sorted_galaxies = sorting.my_mutating_sort(self.galaxies)
+
+        self.assertNotEqual(self.galaxies, original)
+        self.assertEqual(sorted_galaxies, sorted(self.galaxies))
+
+    def test_sort_galaxies_immutable(self):
+        original = self.galaxies.copy()
+        sorted_galaxies = sorting.my_immutable_sort(self.galaxies)
+
+        self.assertEqual(self.galaxies, original)
+        self.assertEqual(sorted_galaxies, sorted(self.galaxies))
 
 
 if __name__ == '__main__':
