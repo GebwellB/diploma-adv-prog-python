@@ -1,3 +1,4 @@
+
 def merge_sort(arr):
     if len(arr) > 1:
         mid_point = len(arr) // 2

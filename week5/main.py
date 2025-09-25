@@ -59,36 +59,12 @@ def run_experiment_1(seed=42, n=10000, trials=10000, low=1, high=10000):
     avg_time_binary_sorted = sum(
         time_call(lambda: binary_search_iter(x, data_sorted)) for x in needles
     ) / trials
-
-    # Binary Tree search on UNSORTED - iterative
-    avg_time_binary_tree_unsorted_iterative = sum(
-        time_call(lambda: bst_search_iterative(x, data_unsorted)) for x in needles
-    ) / trials
-
-    # Binary Tree search on UNSORTED - iterative
-    avg_time_binary_tree_sorted_iterative = sum(
-        time_call(lambda: bst_search_iterative(x, data_sorted)) for x in needles
-    ) / trials
-
-    # Binary Tree search on UNSORTED - recursive
-    avg_time_binary_tree_unsorted_recursive = sum(
-        time_call(lambda: bst_search_recursive(x, data_unsorted)) for x in needles
-    ) / trials
-
-    # Binary Tree search on UNSORTED - recursive
-    avg_time_binary_tree_sorted_recursive = sum(
-        time_call(lambda: bst_search_recursive(x, data_sorted)) for x in needles
-    ) / trials
  
 
     #print(f"Linear Search(unsorted) ms: {avg_time_linear_unsorted}")
     #print(f"Linear Search(sorted)   ms: {avg_time_linear_sorted}")
     #print(f"Binary Search(unsorted) ms: {avg_time_binary_unsorted}")
     #print(f"Binary Search(sorted)   ms: {avg_time_binary_sorted}")
-    print(f"Binary Search(unsorted) ms: {avg_time_binary_tree_unsorted_iterative}")
-    print(f"Binary Search(sorted)   ms: {avg_time_binary_tree_sorted_iterative}")
-    print(f"Binary Search(unsorted) ms: {avg_time_binary_tree_unsorted_recursive}")
-    print(f"Binary Search(sorted)   ms: {avg_time_binary_tree_sorted_recursive}")
 
 
 def run_experiment_2(n_nodes: int = 10000, avg_neighbours = 7,trials: int = 10000, seed: int = 123):
@@ -133,8 +109,8 @@ def run_experiment_2(n_nodes: int = 10000, avg_neighbours = 7,trials: int = 1000
 if __name__ == "__main__":
     run_experiment_1()
 
-    # graph_results = run_experiment_2()
+    graph_results = run_experiment_2()
 
-    # print("\nAverage time (ms) over 10000 Graph searches (BFS vs DFS)")
-    # for k, v in graph_results.items():
-    #     print(f"{k}: {v:.6f}")
+    print("\nAverage time (ms) over 10000 Graph searches (BFS vs DFS)")
+    for k, v in graph_results.items():
+        print(f"{k}: {v:.6f}")

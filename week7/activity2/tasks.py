@@ -44,15 +44,18 @@ def sort_tasks(tasks):
 def binary_search(tasks, target):
     # pdb.set_trace()
     sort_tasks(tasks)
+    time = 0
     low, high = 0, len(tasks) - 1
     while low <= high:
-        mid = (low + high) // 2
+        mid = (low + high)
         if tasks[mid][0] == target:
             return mid
         elif tasks[mid][0] < target:
             low = mid + 1
         else:
             high = mid - 1
+        time += 1
+    print(time)    
     return -1
 
 def main():
