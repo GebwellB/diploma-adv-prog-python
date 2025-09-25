@@ -26,3 +26,13 @@
 
 -- Week 9:
 -Django I picked up pretty quickly - I feel I'm okay with this
+
+Brief Reflection:
+Assessment 1:
+From assessment 1, I learnt how doubly linked lists worked. I was very confused and struggled to understand the concepts of doubly linked lists at the start, but after visualising how the lists linked together and how they traversed each other I started to understand it more. After finishing assessment 1, and seeing all the different functions (insert at head / tail, deleting at head / tail) it finally makes sense and I understand it. It did take me a while though...
+
+Assessment 2:
+Going into this assessment, I already had a rough grasp on hashing but I had no idea what salting was. Funnily enough though, for one of my knowledge base questions I researched ByteCrypt, the predecessor of Argon2. So when it came to implement the code, I had a little bit of a head start on how it worked. As to what I learnt though: The importance of adding salting to password hashing is very important and shouldn't be skipped (thankfully Argon2 does this for me), and the importance of private variables in the constructor when it comes to passwords.
+
+Assessment 3:
+I'm still rather fresh on sorting and it took me a while to grasp my head around the concept. I still struggle with some sorting algorithms and how to read them in code. Seeing them visualised I can understand how they work, but the coding part I'm not to confident in yet. However, I did learn a fair bit about insertion sorting as it's the algorithm I used for this assessment.
