@@ -1,13 +1,17 @@
-
 import asyncio
 import logging
+import json
 
+from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render
+from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseNotAllowed
+
 from notifier.utils.factories import create_user
 from notifier.services.observer import UploadNotifier, alert_admin, log_upload
 from notifier.services.logging import action_logger
 from notifier.utils.log_reader import read_logs
 from notifier.utils.metadata import fetch_all_metadata
+from notifier.models import Document
 
 notifier = UploadNotifier()
 notifier.subscribe(alert_admin)
@@ -17,6 +21,9 @@ notifier.subscribe(log_upload)
 def upload_document(user, document_name):
     notifier.notify(document_name)
 
+@login_required
+# one of 4 crud permissions
+@permission_required("notifier.view_document", raise_exception=True)
 def notify_view(request):
     logging.basicConfig(level=logging.INFO)
 
@@ -36,3 +43,38 @@ def notify_view(request):
         "user": user,
         "logs": logs
     })
+
+
+def serialise_document(document: Document) -> dict:
+    return{
+        "id" : document.id,
+        "title" : document.title,
+        "description" : document.description,
+        "uploaded_at" : document.uploaded_at.isoformat().replace("+00:00", "Z")
+    }
+
+def documents_collection(request):
+    if request.method == "GET":
+        document = Document.objects.order_by("-uploaded_at")
+        data = [serialise_document(document) for document in document]
+        return JsonResponse({"document": data})
+
+    if request.method == "POST":
+        try:
+            payload = json.loads(request.body or "{}")
+        except json.JSONDecodeError:
+            return HttpResponseBadRequest("Invalid JSON")
+
+        title = payload.get("title")
+        if not title:
+            return JsonResponse({"error": "title is required"}, status=400)
+
+        description = payload.get("description", "")
+        document = Document.objects.create(title=title, description=description)
+
+        return JsonResponse(serialise_document(document), status=201)
+
+    return HttpResponseNotAllowed(["GET", "POST"])
+
+def document_detail(request):
+    pass
