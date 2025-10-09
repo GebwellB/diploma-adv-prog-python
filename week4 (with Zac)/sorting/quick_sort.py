@@ -8,10 +8,10 @@ def quick_sort(numbers):
     
 
     # less than pivot
-    smaller_than_pivot = [num for num in numbers if num < pivot_value]  
+    smaller_than_pivot = [num for num in numbers if num < pivot_value]
 
     # equal to pivot
-    equal_to_pivot = []     
+    equal_to_pivot = []
     for num in numbers:
         if num == pivot_value:
             equal_to_pivot.append(num) 
@@ -23,4 +23,4 @@ def quick_sort(numbers):
     return quick_sort(smaller_than_pivot) + equal_to_pivot + quick_sort(greater_than_pivot)
 
 # Example usage
-print(quick_sort([64, 34, 25, 12, 22, 11, 90]))
+print(quick_sort([64, 10, 5, 124, 43, 2, 23, 23, 634, 23, 123, 23]))
